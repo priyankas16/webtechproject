@@ -1,0 +1,103 @@
+<!--Amy and Priyanka website about Food Waste Index Page!-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Waste</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--imports bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		img {
+			width:100%;
+			}
+		#section1 {
+			background-color: red;
+			height:800px;
+			}
+		#section2 {
+			background-color:blue;
+			height:800px;
+			}
+		#section3 {
+			background-color:green;
+			height:800px;
+			}
+		h1 {
+			text-align: center;
+			font-size:130px;
+			}
+	</style>
+</head>
+
+<body>  
+<nav class="navbar navbar-default navbar-fixed-top"> <!--the class tag allows you to automatically make your navbar present w/o css-->
+
+<div>
+
+	<!--div for the home section of nav bar-->
+	<div>
+    <a class="navbar-brand" href="index.html">Home</a> <!--takes you to the div with id homesection-->
+    </div>
+    
+    <div>
+    
+    <!--the a tags are used to jump to a specific section if the user clicks on them-->
+      <div class="collapse navbar-collapse" id="myNavbar"> <!--the class allows your nav bar to become smaller when the user minimizes the page, so your page is more fluid-->
+        <ul class="nav navbar-nav"> <!--this class automatically styles your nav bar-->
+          <li><a href="share.html">Share Food</a></li>
+          <li><a href="stats.html">Statistics</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="sub.html">Subscribe!</a></li>
+        </ul>  
+      </div>
+      
+    </div>
+    
+  </div>
+</nav>    
+<!--end of navbar code-->
+
+<!--homepage section with facts about food waste-->
+<div id="homesection">
+
+  		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    		
+    	<!-- wrapper for slides -->
+    	<div class="carousel-inner"> <!--puts all the images & captions into one div for the carousel-->
+			
+			<!--first slide-->
+      		<div class="item active">
+        		<img src="apple.png" alt="Apple">
+      		</div>
+      		
+      		<!--third slide-->
+      		<div class="item">
+        		<img src="bread.png" alt="Bread">
+      		</div>
+      		
+			<!--second slide-->
+      		<div class="item">
+        		<img src="milk.png" alt="Milk">
+      		</div>
+    		
+
+    <!--left and right controls from https://www.w3schools.com/bootstrap/bootstrap_carousel.asp-->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      
+    </a>
+  </div>
+</div>
+  
+</div>
+</div>
+</body>
+</html>
