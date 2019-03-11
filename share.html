@@ -1,0 +1,111 @@
+<!--Amy and Priyanka website about Food Waste Index Page!-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Waste</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
+  <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
+	<style>
+		img {
+			width:100%;
+			}
+	</style>
+	<script>
+		$(document).ready(function() { //performs the datatable functions
+    	$('#example').DataTable();
+		} );
+	</script>
+</head>
+
+<body>  
+	<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+  		</button>
+  	
+  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    	<ul class="navbar-nav mr-auto">
+      	<li class="nav-item active">
+        	<a class="nav-link" href="share.html">Share Food</a>
+      	</li>
+      
+      	<li class="nav-item">
+        <a class="nav-link" href="stats.html">Statistics</a>
+        </li>
+      
+      	<li class="nav-item dropdown">
+        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          	Get Involved
+        	</a>
+        	
+        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        		<a class="dropdown-item" href="quiz.html">Become an Advocate</a>
+        		<a class="dropdown-item" href="share.html">Become a Partner</a>
+        	</div>
+	</nav>
+<!--end of navbar code-->
+
+<!--homepage section with facts about food waste-->
+<div id="homesection">
+	<h1 class="text-primary"> Share Food </h1>
+	
+	<!--container with the data table-->
+  	<div class="container-fluid bg-3 text-center">
+	<table id="example" class="display" style="width:100%">
+        <thead class="text-primary" >
+            <tr class="text-primary" >
+                <th>Restaurant Name</th>
+                <th>Food Type</th>
+                <th>Food Quantity (Feeds How Many?)</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr >
+                <th>Olive Garden</th>
+                <th>Breadsticks</th>
+                <th>50</th>
+                <th>Aurora, IL</th>
+            </tr>
+             <tr>
+                <th>Chili's</th>
+                <th>Chili</th>
+                <th>30</th>
+                <th>Geneva, IL</th>
+            </tr>
+             <tr>
+                <th>Sodexo</th>
+                <th>Lettuce</th>
+                <th>20</th>
+                <th>Aurora, IL</th>
+            </tr>
+             <tr>
+                <th>Potbelly's</th>
+                <th>Bread</th>
+                <th>10</th>
+                <th>Batavia, IL</th>
+            </tr>
+        </tbody>
+        <tfoot class="text-primary" >
+            <tr>
+                <th>Restaurant Name</th>
+                <th>Food Type</th>
+                <th>Food Quantity</th>
+                <th>Location</th>
+            </tr>
+        </tfoot>
+    </table>
+	</div><br><br>
+</div>
+</body>
+</html>
