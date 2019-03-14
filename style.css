@@ -1,15 +1,14 @@
 @font-face {
-	font-family:neou;
-	src: url(neoubold.otf)
+	font-family:bold;
+	src: url(bold.ttf)
 		}
 body {
-	font-family:neou;
+	font-family:bold;
 	}
 a {
 	font-size:20px;
 	}
 h1 {
 	text-align: center;
-	font-size:130px;
-	margin-top:100px;
+	font-size:100px;
 }
