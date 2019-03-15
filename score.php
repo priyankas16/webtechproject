@@ -1,4 +1,6 @@
 <!--Amy and Priyanka website about Food Waste Index Page!-->
+<!--This page scores the quiz to determine whether user can register as an advocate or not-->
+<!--This page uses Bootstrap, SQL, JS-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,37 +11,33 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
   <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
   <style>
-  label{
+label{
   	font-size: 12px;
   	margin-left: 5px;
   	margin-top: -4px;
   }
-  .card-signin {
+.card-signin {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
 }
-
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
   background: scroll center url('images/vegetables.jpg');
   background-size: cover;
 }
-
 .card-signin .card-body {
   padding: 2rem;
 }
@@ -148,6 +146,7 @@
   </script>
 </head>
 <body>
+    <!--navbar-->
     <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="index.html">Stop Food Waste</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
