@@ -1,4 +1,6 @@
 <!--Amy and Priyanka website about Food Waste Index Page!-->
+<!--This page directs user to the quiz page if they decide they want to be an advocate, if not they can return to home-->
+<!--This page features Bootstrap styling-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,59 +11,52 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
   <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
   <style>
   body{
-  background-color:  #EB2F2F;
-}
-nav {
-  background-color: white;
-}
-    img {
+      background-color:  #EB2F2F;
+    }
+  nav {
+      background-color: white;
+    }
+  img {
       width:100%;
       }
-    p {
+  p {
       text-align: center;
     }
   </style>
-  <script>
-    $(document).ready(function() { //performs the datatable functions
-      $('#example').DataTable();
-    } );
-  </script>
 </head>
 <body>
+  <!--navbar code-->
     <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="index.html">Stop Food Waste</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
       </button>
-    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="share.html">Share Food</a>
         </li>
-      
         <li class="nav-item">
         <a class="nav-link" href="stats.php">Statistics</a>
         </li>
-      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Get Involved
           </a>
-          
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="quiz.php">Become an Advocate</a>
             <a class="dropdown-item" href="share.html">Become a Partner</a>
           </div>
+        </li>
   </nav>
 <!--end of navbar code-->
+<!--container-->
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -80,5 +75,6 @@ nav {
       </div>
     </div>
   </div>
+<!--end of container-->
 </body>
 </html>
