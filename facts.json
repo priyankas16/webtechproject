@@ -1,0 +1,27 @@
+[
+    {
+        "fact": "Over 1/3 of all food globally produced goes to waste",
+        "info": "<img src='images/waste.jpg'>"
+    },
+    {
+		"fact": "The annual value of food wasted globally is $1 trillion",
+        "info": "<img src='images/waste2.jpeg'>"
+    },
+    {
+    	"fact": "25% of the world's fresh water supply is used to grow food that is never eaten",
+        "info": "<img src='images/waste3.jpg'>"
+    },
+    {
+        "fact": "1/4 of wasted food could feed all 795 million undernourished people in the world",
+        "info": "<img src='images/waste4.png'>"
+    },
+    {
+        "fact": "Half of all produce is thrown away in the US because it is too ‘ugly’ to eat. This amounts to 60 million tons of fruit and vegetables",
+        "info": "<img src='images/waste.jpeg'>"
+    },
+    {
+        "fact": "The amount of food wasted annually weighs 1.3 billion tons",
+        "info": "<img src='images/waste5.jpg'>"
+    }
+    
+]

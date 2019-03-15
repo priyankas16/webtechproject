@@ -8,10 +8,18 @@
   <link rel="icon" href="favicon.png" type="image/png"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
-  
 
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+  	<style>
+  		#partner{
+  			border-style:solid;
+  			border-width:5px !important;
+  			border-color:red;
+  			padding:20px;
+  			margin:0 auto;
+  			margin-bottom:20px;
+  			}
+  	</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
@@ -30,8 +38,8 @@
 </head>
 
 <body>  
-	<nav class="navbar navbar-expand-lg border-bottom border-light">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+	<nav class="navbar navbar-expand-lg border-bottom">
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -62,13 +70,13 @@
 <!--end of navbar code-->
 
 <div class="jumbotron">
-		<h1 class="text-primary"> Current Partners </h1>
-		<p class="text-primary"> These are the restaurants and charities we are currently partnered with!</p>
+		<h1> Current Partners </h1>
+		<p> These are the restaurants and charities we are currently partnered with!</p>
 		<a href="partner.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Click Here to Become a Partner!</a>
 </div>
 
 <!--container with the data table for restaurant partners-->
-  	<div id="partner"class="container-fluid bg-3 text-center" style="width:50%; float:left" >
+  	<div id="partner"class="container-fluid bg-3 text-center" style="width:80%">
   	<h2> Restaurants </h2>
 		<?php
 		include "config.php";
@@ -99,7 +107,7 @@
 	</div>
 
 <!--container with the data table for charity partners-->
-  	<div id="partner" class="container-fluid bg-3 text-center" style="width:50%; float:right" >
+  	<div id="partner" class="container-fluid bg-3 text-center" style="width:80%">
   	<h2> Charities </h2>
 		<?php
 		include "config.php";

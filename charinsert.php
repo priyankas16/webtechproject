@@ -22,8 +22,8 @@
 </head>
 
 <body>  
-	<nav class="navbar navbar-expand-lg border-bottom border-light">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+	<nav class="navbar navbar-expand-lg border-bottom">
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>

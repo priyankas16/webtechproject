@@ -23,7 +23,7 @@
 
 <body>  
 	<nav class="navbar navbar-expand-lg border-bottom">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -55,17 +55,19 @@
 	<?php
     	include 'config.php';
 		
-		$name = $_POST['restName'];
-		$location = $_POST['restLocation'];
+		$restname = $_POST['restName'];
+		$foodtype = $_POST['foodType'];
+		$quantity = $_POST['quantity'];
 		
-    	$sql = "INSERT IGNORE INTO restaurants(restName,restLocation) VALUES('$name', '$location')";
+    	$sql = "";
+
     	$result = $conn->query($sql);
     	
     	if (!$result) {
     		echo mysqli_error($conn);
     		}
     	else {
-    		echo "<div class='jumbotron'> <h1> You have successfully become a restaurant partner! </h1> <br> <a href='donate.php' class='btn btn-primary btn-lg active' role='button' aria-pressed='true'>Click Here to Donate Food!</a> </div>";
+    		echo "<div class='jumbotron'> <h1> You have successfully donated food! Thank you so much!</div>";
     		}
 ?>
 

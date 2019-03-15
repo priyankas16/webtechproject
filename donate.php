@@ -28,8 +28,8 @@
 </head>
 
 <body>  
-	<nav class="navbar navbar-expand-lg border-bottom border-light">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+	<nav class="navbar navbar-expand-lg border-bottom">
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -63,11 +63,14 @@
 	<h1> Donate Food </h1>
 </div>
 
-<!--creates form-->
 <div id="homesection">
-<form>
+
+<!--form to donate the food-->
+<form action="donateinsert.php" method="post">
+	<!--restaurant name section-->
   <div class="form-group">
-  	<select class="form-control">
+  	<label for="restaurantname"> Restaurant Name </label>
+  	<select class="form-control" id="restaurantName" aria-describedby="nameHelp" name="restName" required>
   		<option> Restaurant Name </option>
   			<?php
 			include "config.php";
@@ -81,11 +84,23 @@
 				}
 			?>
 	</select>
+	<small class="text-muted"> Restaurant name not listed? Click <a href="partner.html">here</a> to sign up! </small>
+	</div>
     
+    <!--food type-->
     <div class="form-group">
-    	<label for="foodtype">Food Type (ex: chicken)</label>
-    	<input type="text" class="form-control" id="foodtype" aria-describedby="emailHelp" placeholder="Enter food type">
+    	<label for="foodtype">Food Type (ex: Bagels)</label>
+    	<input type="text" class="form-control" id="foodtype" placeholder="Enter food type" name="foodType" required>
   	</div>
+  	
+  	<!--food quantity-->
+  	<div class="form-group">
+    	<label for="foodquantity">Food Quantity (# of people it feeds)</label>
+    	<input type="text" class="form-control" id="foodquantity" placeholder="Enter food quantity" name="quantity" required>
+  	</div>
+  	
+  	<button type="submit" class="btn btn-primary">Submit</button>
+  	
 </form>
 
 </div>

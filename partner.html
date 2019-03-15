@@ -23,12 +23,41 @@
 		form {
 		margin: 0 auto;
 		}
+		
+		#minirestaurant{
+		background-color:white;
+		width:80%;
+		margin:0 auto;
+		padding:20px;
+		border-style:solid;
+		border-color:red;
+		border-width:4px;
+		}
+		
+		#minicharity{
+		background-color:white;
+		width:80%;
+		margin:0 auto;
+		padding:20px;
+		border-style:solid;
+		border-color:red;
+		border-width:4px;
+		}
+		
+		#charityform{
+		float:right;
+		width:50%;
+		}
+		#restaurantform{
+		float:left;
+		width:50%;
+		}
 	</style>
 </head>
 
 <body>  
-	<nav class="navbar navbar-expand-lg border-bottom border-light">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+	<nav class="navbar navbar-expand-lg border-bottom">
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -59,16 +88,17 @@
 <!--end of navbar code-->
 
 <div class="jumbotron">
-		<h1 class="text-primary"> Become a Partner </h1>
-		<p class="text-primary"> Sign up to become an official food donor, and help prevent food waste! As of right now, we are only accepting restaurants and charities in the Aurora, IL area</p>
+		<h1> Become a Partner </h1>
+		<p> Sign up to become an official food donor, and help prevent food waste! As of right now, we are only accepting restaurants and charities in the Aurora, IL area</p>
 </div>
 
-<!--section with form to register as a donor-->
+<!--section with form to register as a restaurant/donor-->
 <div id="homesection">
 
 	<div id="restaurantform">
-	<h2> Restaurant Partners </h2>
-		<form style="width:50%" action="restinsert.php" method="post">
+	<div id="minirestaurant"> <!--mini div for styling-->
+	<h2 class="text-primary"> Restaurant Partners </h2>
+		<form class="text-primary" style="width:100%" action="restinsert.php" method="post">
   			<div class="form-group">
     			<label for="restName">Restaurant Name (ex: Chili's)</label>
    				<input type="text" class="form-control" id="restName" placeholder="Enter Restaurant Name" name="restName" required>
@@ -83,10 +113,12 @@
   		
 		</form>
 	</div>
+	</div>
 	
 	<div id="charityform">
-	<h2> Charity Partners </h2>
-		<form style="width:50%" action="charinsert.php" method="post">
+	<div id="minicharity">
+	<h2 class="text-primary"> Charity Partners </h2>
+		<form class="text-primary" style="width:100%" action="charinsert.php" method="post">
   			<div class="form-group">
     			<label for="charityName">Charity Name (ex: Hesed House)</label>
    				<input type="text" class="form-control" id="charityName" placeholder="Enter Charity Name" name="charName" required>
@@ -100,6 +132,7 @@
   		<button type="submit" class="btn btn-primary">Submit</button>
   		
 		</form>
+	</div>
 	</div>
 </div>
 </body>

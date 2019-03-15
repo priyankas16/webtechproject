@@ -11,7 +11,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+  	<style>
+  		#minicontainer{
+  			padding:20px;
+  			background-color:white;
+  			border-style:solid;
+  			border-width:5px !important;
+  			border-color:red;
+  			}
+  		#container {
+  			margin-top:-35px;
+  			padding:20px;
+  			
+  			}
+  	</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
@@ -24,8 +37,8 @@
 </head>
 
 <body>  
-	<nav class="navbar navbar-expand-lg border-bottom border-light">
-		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+	<nav class="navbar navbar-expand-lg border-bottom">
+		<a class="navbar-brand" href="index.php">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -58,14 +71,15 @@
 <!--home section with jumbotron and datable inside-->
 <div id="homesection">
 	<div class="jumbotron">
-		<h1 class="text-primary"> Share Food </h1>
+		<h1> Share Food </h1>
 		<p> We are currently partnered with many local restaurants and charities/non-profits in the Aurora Area! On this page, we have a datatable with all the foods currently donated by nearby restaurants </p>
 		<a href="donate.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Click Here to Donate!</a>
 	</div>
 	
 	<!--container with the data table for food donations-->
-  	<div class="container-fluid bg-3 text-center" style="width:80%" >
-  	<h2> Food Donations </h2>
+  <div id="container">
+  	<div id="minicontainer" class="container-fluid bg-3 text-center" style="width:80%" >
+  	<h2 class="text-danger"> FOOD DONATIONS </h2>
 		<?php
 		include "config.php";
 		echo "<table id='donations'>"; //creates the datatable with jquery plugin
@@ -95,8 +109,8 @@
 		
 		$conn->close();
 	?>
-		
-		
+	</div>
+	</div>
 
 	</div>
 	

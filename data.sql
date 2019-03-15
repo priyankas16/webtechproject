@@ -35,27 +35,27 @@ INSERT INTO `charity` (`charityId`, `charityName`, `charityLocation`) VALUES
 
 CREATE TABLE `donations` (
 	`id` int(10) UNSIGNED NOT NULL,
-  `restId` int(10) UNSIGNED NOT NULL,
   `foodtype` varchar(100) NOT NULL,
-  `quantityfed` varchar(30) NOT NULL
+  `quantityfed` varchar(30) NOT NULL,
+  `restId` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `donations`
 --
 
-INSERT INTO `donations` (`id`, `restId`, `foodtype`, `quantityfed`) VALUES
-(1, 1, 'Meat Chili', '30'),
-(2, 1, 'Nachos', '10'),
-(3, 1, 'Veggie Chili', '30'),
-(4, 3, 'Steak', '7'),
-(5, 4, 'Bagels', '20'),
-(6, 4, 'Bacon', '10'),
-(7, 5, 'Celery', '10'),
-(8, 5, 'Boneless Buffalo Wings', '10'),
-(9, 6, 'Cheddar Soup', '10'),
-(10, 6, 'Bread', '40'),
-(11, 7, 'Chicken Burritos', '10');
+INSERT INTO `donations` (`id`, `foodtype`, `quantityfed`, `restId`) VALUES
+(1,'Meat Chili', '30', 1),
+(2,'Nachos', '10', 1),
+(3,'Veggie Chili', '30', 1),
+(4,'Steak','7', 3),
+(5,'Bagels','20', 4),
+(6,'Bacon','10', 4),
+(7,'Celery','10', 5),
+(8,'Boneless Buffalo Wings','10', 6),
+(9,'Cheddar Soup','10', 6),
+(10,'Bread','40', 6),
+(11,'Chicken Burritos','10', 7);
 
 -- --------------------------------------------------------
 
