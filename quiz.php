@@ -1,7 +1,7 @@
 <!-- Amy Guo and Priyanka Sarangabany, December 9th, 2018-->
 <!--Questions page that creates database of 20 questions on the server side and randomnly prints 10 to the page on the client side, includes a 10 minute timer that automatically submits exam at 0:00-->
 <!-- Countdown Timer information researched from https://www.w3schools.com/howto/howto_js_countdown.asp and https://wplearninglab.com/countdown-timer/-->
-<!--Amy and Priyanka website about Food Waste Index Page!-->
+<!--This page features PHP, SQL, Bootstrap, JS-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,78 +12,75 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
   <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
-	<style>
-		img {
-			width:100%;
-			}
+  <style>
+	img {
+		width:100%;
+		}
 	nav {
 		background-color: white;
 	}
-.container {
-
-	width: 100%;
-	height: 100%;
-	
-	position: absolute;
-	top:50%;
-	bottom: 0;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
-}
-div#clockdiv {
-    text-align: center;
-    font-family: bold;
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
-    margin-top: 2%;
-}
- 
-div#clockdiv:before {
-    width: 100%;
-    margin-bottom: 21px;
-}
- 
-.countdown-wrap {
-    width: 100%;
-}
- 
-div#clockdiv > div {
-    font-size: 30px;
-    width: 25%;
-    color: red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
- 
-.minutes, .seconds {
-	margin-bottom:20px;
-}
- 
-span.time-label {
-    font-size: 16px;
-    color: red;
-}
-body {
-	background-color: #B0F2D2;
-}
-</style>
+	.container {
+		width: 100%;
+		height: 100%;
+		
+		position: absolute;
+		top:50%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	  	
+		margin: auto;
+	}
+	div#clockdiv {
+	    text-align: center;
+	    font-family: bold;
+	    font-weight: bold;
+	    font-size: 16px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-wrap: wrap;
+	    max-width: 500px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    text-align:center;
+	    margin-top: 2%;
+	}
+	 
+	div#clockdiv:before {
+	    width: 100%;
+	    margin-bottom: 21px;
+	}
+	 
+	.countdown-wrap {
+	    width: 100%;
+	}
+	 
+	div#clockdiv > div {
+	    font-size: 30px;
+	    width: 25%;
+	    color: red;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+	 
+	.minutes, .seconds {
+		margin-bottom:20px;
+	}
+	 
+	span.time-label {
+	    font-size: 16px;
+	    color: red;
+	}
+	body {
+		background-color: #B0F2D2;
+	}
 	</style>
 	<script>
 		$(document).ready(function() { //performs the datatable functions
@@ -91,14 +88,14 @@ body {
 		} );
 	</script>
 </head>
-
-<body>  
+<body> 
+	<!--navbar-->
 	<nav class="navbar navbar-expand-lg">
 		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   		</button>
-  	
+
   	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     	<ul class="navbar-nav mr-auto">
       	<li class="nav-item active">
@@ -118,10 +115,11 @@ body {
         		<a class="dropdown-item" href="advocate.html">Become an Advocate</a>
         		<a class="dropdown-item" href="share.html">Become a Partner</a>
         	</div>
+        </li>
 	</nav>
 <!--end of navbar code-->
 
-
+<!--timer-->
 <div class="countdown-wrap">
             <div id="clockdiv">
                 <div>
@@ -134,11 +132,9 @@ body {
                 </div>
             </div>
         </div>
-
-
 <div>
-
 <script>
+//timer code
 var timeInMinutes = 10; //10 minutes on timer
 var currentTime = Date.parse(new Date()); //count down from current time
 var deadline = new Date(currentTime + timeInMinutes*60*1000); //count down to deadline
@@ -173,14 +169,10 @@ function initializeClock(id, endtime){
 initializeClock('clockdiv', deadline);
 </script>
 
+<!--SQL Datatable creation for questions-->
 <?php
 include "config.php";
-
-//sql to create database
-$sql = "CREATE DATABASE advocate";
-mysqli_query($conn, $sql);
-mysqli_select_db($conn, 'advocate');
-
+mysqli_select_db($conn, 'shareFood');
 // sql to create table
 $sql = "CREATE TABLE questions ( /*Create table of 20 questions*/
 question TEXT NOT NULL,
@@ -297,3 +289,5 @@ $sql = "Select * from questions ORDER BY RAND() LIMIT 10";
     </div>
   </div>";
 ?>
+</body>
+</html>
