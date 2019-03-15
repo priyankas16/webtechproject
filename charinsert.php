@@ -1,5 +1,5 @@
-<!--Amy and Priyanka website about Food Waste Index Page!-->
-<!--uses jquery accordion and bootstrap-->
+<!--Amy and Priyanka website about Food Waste -->
+<!--Page for people that have successfully registered to become restaurant donors-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,29 +19,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script> <!--from https://jqueryui.com-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!--from https://jqueryui.com-->
   <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
-	<style>
-  		#accordion{
-  			font-family:bold;
-  			text-align:center;
-  			margin:0 auto;
-  			}
-  		div.jumbotron{
-  			background-color:white;
-  			color: #EB2F2F;
-  			}
-  		#factsection{
-  			margin-top:20px;
-  			}
-	</style>
-	
-	<script>
-  		$( function() {
-    		$( "#accordion" ).accordion({
-      		heightStyle: "content"
-    		});
-  		} );
-  </script>
-  </script>
 </head>
 
 <body>  
@@ -75,34 +52,23 @@
         	</div>
 	</nav>
 <!--end of navbar code-->
+	<?php
+    	include 'config.php';
+		
+		$name = $_POST['charName'];
+		$location = $_POST['charLocation'];
+		
+    	$sql = "INSERT IGNORE INTO charity(charityName,charityLocation) VALUES('$name', '$location')";
+    	$result = $conn->query($sql);
+    	
+    	if (!$result) {
+    		echo mysqli_error($conn);
+    		}
+    	else {
+    		echo "<div class='jumbotron'> <h1> You have successfully become a charity partner! </h1> <br> <a href='share.php' class='btn btn-primary btn-lg active' role='button' aria-pressed='true'>Click Here to View the Donated Food!</a> </div>";
+    		}
+?>
 
-<div class="jumbotron">
-	<h1> Stop Food Waste </h1>
-</div>
-
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7SqLz4O32vc"></iframe>
-</div>
-
-<!-- section with facts about food waste-->
-<!--uses accordion-->
-<div id="factsection">
-		<h2 class='text-danger'> FOOD WASTE FACTS </h2>
-		<div id="accordion" style="width:80%">
-  			<h3>Over 1/3 of all food globally produced goes to waste</h3>
-  				<div>
-    			<p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-  				</div>
-  			<h3>25% of the world's fresh water supply is used to grow food that is never eaten</h3>
-  				<div>
-    			<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
-  				</div>
-  			<h3>The annual value of food wasted globally is $1 trillion</h3>
-  				<div>
-    			<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>		
-  				</div>
-		</div>
-</div>
 
 </body>
 </html>

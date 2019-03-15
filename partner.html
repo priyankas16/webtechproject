@@ -1,0 +1,106 @@
+<!--Amy and Priyanka website about Food Waste!-->
+<!--Page to register and become a partner-->
+<!--uses a bootstrap form-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Waste</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--imports bootstrap css-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!--from datatables.net-->
+  
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src=" https://code.jquery.com/jquery-3.3.1.js"></script> <!--from datatables.net-->
+  <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
+	<style>
+		form {
+		margin: 0 auto;
+		}
+	</style>
+</head>
+
+<body>  
+	<nav class="navbar navbar-expand-lg border-bottom border-light">
+		<a class="navbar-brand" href="index.html">Stop Food Waste</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+  		</button>
+  	
+  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    	<ul class="navbar-nav mr-auto">
+      	<li class="nav-item active">
+        	<a class="nav-link" href="share.php">Share Food</a>
+      	</li>
+      
+      	<li class="nav-item">
+        <a class="nav-link" href="stats.html">Statistics</a>
+        </li>
+      	
+      	<li class="nav-item">
+      	<a class="nav-link" href="partnerexamples.php"> Partners </a>
+      	
+      	<li class="nav-item dropdown">
+        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          	Get Involved
+        	</a>
+        	
+        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        		<a class="dropdown-item" href="quiz.html">Become an Advocate</a>
+        		<a class="dropdown-item" href="partner.html">Become a Partner</a>
+        	</div>
+	</nav>
+<!--end of navbar code-->
+
+<div class="jumbotron">
+		<h1 class="text-primary"> Become a Partner </h1>
+		<p class="text-primary"> Sign up to become an official food donor, and help prevent food waste! As of right now, we are only accepting restaurants and charities in the Aurora, IL area</p>
+</div>
+
+<!--section with form to register as a donor-->
+<div id="homesection">
+
+	<div id="restaurantform">
+	<h2> Restaurant Partners </h2>
+		<form style="width:50%" action="restinsert.php" method="post">
+  			<div class="form-group">
+    			<label for="restName">Restaurant Name (ex: Chili's)</label>
+   				<input type="text" class="form-control" id="restName" placeholder="Enter Restaurant Name" name="restName" required>
+  			</div>
+  			
+  			<div class="form-group">
+    			<label for="restLocation">Location (ex: Aurora, IL)</label>
+    			<input type="text" class="form-control" id="restLocation" placeholder="Enter Location" name="restLocation" required>
+  			</div>
+  			
+  		<button type="submit" class="btn btn-primary">Submit</button>
+  		
+		</form>
+	</div>
+	
+	<div id="charityform">
+	<h2> Charity Partners </h2>
+		<form style="width:50%" action="charinsert.php" method="post">
+  			<div class="form-group">
+    			<label for="charityName">Charity Name (ex: Hesed House)</label>
+   				<input type="text" class="form-control" id="charityName" placeholder="Enter Charity Name" name="charName" required>
+  			</div>
+  			
+  			<div class="form-group">
+    			<label for="charityLocation">Location (ex: Aurora, IL)</label>
+    			<input type="text" class="form-control" id="charityLocation" placeholder="Enter Location" name="charLocation" required>
+  			</div>
+  			
+  		<button type="submit" class="btn btn-primary">Submit</button>
+  		
+		</form>
+	</div>
+</div>
+</body>
+</html>

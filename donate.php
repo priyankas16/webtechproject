@@ -1,5 +1,6 @@
-<!--Amy and Priyanka website about Food Waste Index Page!-->
-<!--uses jquery accordion and bootstrap-->
+<!--Amy and Priyanka website about Food Waste!-->
+<!--Donation Page-->
+<!--uses complex mysql database-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,35 +14,17 @@
   <link rel="stylesheet" href="/resources/demos/style.css"><!--from https://jqueryui.com-->
   
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+  <style>
+  	#homesection{
+  		width:50%;
+  		margin: 0 auto;
+  	}
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script> <!--from https://jqueryui.com-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!--from https://jqueryui.com-->
   <script src=" https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!--from datatables.net-->
-	<style>
-  		#accordion{
-  			font-family:bold;
-  			text-align:center;
-  			margin:0 auto;
-  			}
-  		div.jumbotron{
-  			background-color:white;
-  			color: #EB2F2F;
-  			}
-  		#factsection{
-  			margin-top:20px;
-  			}
-	</style>
-	
-	<script>
-  		$( function() {
-    		$( "#accordion" ).accordion({
-      		heightStyle: "content"
-    		});
-  		} );
-  </script>
-  </script>
 </head>
 
 <body>  
@@ -77,31 +60,34 @@
 <!--end of navbar code-->
 
 <div class="jumbotron">
-	<h1> Stop Food Waste </h1>
+	<h1> Donate Food </h1>
 </div>
 
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7SqLz4O32vc"></iframe>
-</div>
+<!--creates form-->
+<div id="homesection">
+<form>
+  <div class="form-group">
+  	<select class="form-control">
+  		<option> Restaurant Name </option>
+  			<?php
+			include "config.php";
+			mysqli_select_db($conn,"sharefood");
+		
+			$sql = "SELECT restName FROM restaurants";
+			$result = $conn->query($sql);
 
-<!-- section with facts about food waste-->
-<!--uses accordion-->
-<div id="factsection">
-		<h2 class='text-danger'> FOOD WASTE FACTS </h2>
-		<div id="accordion" style="width:80%">
-  			<h3>Over 1/3 of all food globally produced goes to waste</h3>
-  				<div>
-    			<p>Mauris mauris ante, blandit et, ultrices a, susceros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-  				</div>
-  			<h3>25% of the world's fresh water supply is used to grow food that is never eaten</h3>
-  				<div>
-    			<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
-  				</div>
-  			<h3>The annual value of food wasted globally is $1 trillion</h3>
-  				<div>
-    			<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>		
-  				</div>
-		</div>
+				while ($row = mysqli_fetch_array($result)) {
+					echo '<option>'.$row['restName'].'</option>';
+				}
+			?>
+	</select>
+    
+    <div class="form-group">
+    	<label for="foodtype">Food Type (ex: chicken)</label>
+    	<input type="text" class="form-control" id="foodtype" aria-describedby="emailHelp" placeholder="Enter food type">
+  	</div>
+</form>
+
 </div>
 
 </body>
